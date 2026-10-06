@@ -29,12 +29,12 @@ export RCLONE_CONFIG_R2_NO_CHECK_BUCKET=true
 
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
-mkdir -p "$TMP/${PROYECTO}/media"
+mkdir -p "$TMP/${PROYECTO}"
 for f in "$ORIGEN"/hero-loop.mp4 "$ORIGEN"/hero-poster.jpg; do
-  [ -f "$f" ] && ln -s "$f" "$TMP/${PROYECTO}/media/$(basename "$f")"
+  [ -f "$f" ] && ln -s "$f" "$TMP/${PROYECTO}/$(basename "$f")"
 done
 
 rclone copy "$TMP" "R2:${BUCKET}" --copy-links --progress \
   --header-upload "Cache-Control: public, max-age=604800"
 
-echo "Listo. Prueba: curl -I -H 'Range: bytes=0-1' https://tiles.dariuzph.com/${PROYECTO}/media/hero-loop.mp4  (debe responder 206)"
+echo "Listo. Prueba: curl -I -H 'Range: bytes=0-1' https://tiles.dariuzph.com/${PROYECTO}/hero-loop.mp4  (debe responder 206)"

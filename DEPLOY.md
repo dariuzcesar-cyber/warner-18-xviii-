@@ -4,14 +4,14 @@ Sitio estático (HTML/CSS/JS + GSAP por CDN). Sin build.
 Demo: **https://warnerdemo.dariuzph.com** (Cloudflare Pages, conectado a este repo).
 
 ## Video en R2
-`hero-loop.mp4` se sirve desde `https://tiles.dariuzph.com/warner/media/` porque
+`hero-loop.mp4` se sirve desde `https://tiles.dariuzph.com/warner/` porque
 Pages no soporta Range/206 y iPhone/Safari lo exige. `assets/hero-loop.mp4` es solo
 respaldo (`data-fallback`). Para subirlo o reemplazarlo:
 ```bash
 export R2_ACCESS_KEY_ID="..."
 export R2_SECRET_ACCESS_KEY="..."
 scripts/subir-media.sh
-curl -I -H 'Range: bytes=0-1' https://tiles.dariuzph.com/warner/media/hero-loop.mp4   # 206
+curl -I -H 'Range: bytes=0-1' https://tiles.dariuzph.com/warner/hero-loop.mp4   # 206
 ```
 Nunca guardes claves de R2 en el repo ni las pegues en chats.
 
