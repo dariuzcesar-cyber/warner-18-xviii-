@@ -152,6 +152,8 @@ body.is-ready .nav{transform:none}
 .cata__n{font-family:var(--serif);font-size:1rem;color:var(--gold);letter-spacing:.2em}
 .cata__grid h3{font-size:2.4rem;margin:1.2rem 0 .8rem}
 .cata__grid p{color:#cfc2a8}
+.cata__note{max-width:1200px;margin:2.4rem auto 0;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--mute)}
+.cata__note::before{content:"";display:block;width:48px;height:1px;background:var(--gold);margin:0 auto 1.2rem;opacity:.6}
 
 /* ============ CIERRE ============ */
 .closing{position:relative;padding:clamp(100px,14vw,200px) var(--gut);text-align:center;background:radial-gradient(ellipse at 50% 40%,#2a180d,var(--ink) 70%)}
