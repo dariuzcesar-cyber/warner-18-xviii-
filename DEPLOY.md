@@ -1,7 +1,8 @@
 # Warner 18-XVIII — Despliegue (demo privado)
 
 Sitio estático (HTML/CSS/JS + GSAP por CDN). Sin build.
-Demo: **https://warnerdemo.dariuzph.com** (Cloudflare Pages, conectado a este repo).
+Demo: **https://warner18demo.dariuzph.com** (alias de warner-18-xviii.pages.dev).
+Repo conectado a Cloudflare Pages: `dariuzcesar-cyber/warner-18-xviii-` (con guion final).
 
 ## Video en R2
 `hero-loop.mp4` se sirve desde `https://tiles.dariuzph.com/warner/` porque
@@ -19,11 +20,12 @@ Nunca guardes claves de R2 en el repo ni las pegues en chats.
 1. `git push -u origin main`
 2. Cloudflare → Workers & Pages → Create → Pages → conectar el repo.
    Sin build command; directorio de salida `/`.
-3. Pages → Custom domains → `warnerdemo.dariuzph.com`.
+3. Pages → Custom domains → `warner18demo.dariuzph.com`.
 
 ## Después
-Los pushes a GitHub no disparaban deploy en Casa Gil: usar el Deploy Hook
-(`curl -X POST <hook>`). No usar "Retry" en deploys viejos.
+Los pushes a GitHub NO disparan deploy: usar el Deploy Hook `publicar`
+(Pages → Settings → Builds → Deploy hooks; `curl -X POST <hook>`).
+No usar "Retry" en deploys viejos: republica el commit viejo.
 
 ## Privacidad
 Demo no indexable: `<meta robots>`, `robots.txt` y `X-Robots-Tag` en `_headers`.
